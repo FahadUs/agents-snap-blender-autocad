@@ -1,0 +1,11 @@
+{
+  "id": "blender_005",
+  "name": "Hyper3D Rodin (AI Generation)",
+  "department": "Blender 3D",
+  "description": "Generates 3D models from text or images via Hyper3D Rodin through Blender MCP, then imports for refinement/export.",
+  "responsibilities": ["Check Hyper3D status/API key","Craft prompt or supply images","Submit + poll + import job","Hand off to cleanup/export"],
+  "tasks": ["Status check","Generate via text/images","Poll + import","Screenshot + source note"],
+  "inputs": {"concept":"text prompt or reference images; per task"},
+  "outputs": {"generated_model":"imported model + source note + screenshot; per task"},
+  "dependencies": ["blender_001","blender_002","blender_003","blender_007"]
+}

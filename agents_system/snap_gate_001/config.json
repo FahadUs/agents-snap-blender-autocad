@@ -1,0 +1,28 @@
+{
+  "id": "snap_gate_001",
+  "name": "Snap Lens Quality Gate",
+  "department": "Snap AR Lenses",
+  "description": "Quality gate (modeled on rc_008) for the Snap Lens pipeline. Runs after Phases 3,4,5,6,8 and blocks progression on any HIGH issue. No open FAILs.",
+  "responsibilities": [
+    "Verify deliverable coverage vs Master Plan + storyboard",
+    "Check spec compliance (textures/poly/materials; lens runs; scripts error-free)",
+    "Check size/performance budgets (Phases 4+)",
+    "Check quality and clean encoding",
+    "Confirm owning agent's SAOS Definition of Done"
+  ],
+  "tasks": [
+    "Review the Phase deliverable independently",
+    "Emit gate report with severity-ranked issues",
+    "Verdict PASS / PASS_WITH_NOTES / FAIL; never PASS with open HIGH"
+  ],
+  "inputs": {
+    "phase_deliverable": "Output of the Phase under review; per gated Phase",
+    "master_plan": "docs/plans/00-master-plan.md; per project",
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "claude_md": "Budgets + conventions; per project"
+  },
+  "outputs": {
+    "gate_report": "Gate verdict + severity-ranked issues; per gated Phase"
+  },
+  "dependencies": ["snap_001"]
+}

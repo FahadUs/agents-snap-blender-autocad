@@ -1,0 +1,27 @@
+{
+  "id": "snap_003",
+  "name": "Creative Director & Storyboard",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 2. Translates strategy into art direction + interaction storyboard + a complete typed asset list for Phase 3.",
+  "responsibilities": [
+    "Define art direction (mood, color, style, references)",
+    "Design interaction flow: triggers, states, transitions, CTA",
+    "Produce storyboard frames (idle -> trigger -> effect -> reset)",
+    "Specify UX hints and accessibility",
+    "Enumerate every required asset (2D/3D/material/VFX/audio)"
+  ],
+  "tasks": [
+    "Read docs/01-strategy.md + CLAUDE.md + brand guidelines",
+    "Produce docs/02-storyboard.md with complete asset list",
+    "HARD STOP if asset list incomplete"
+  ],
+  "inputs": {
+    "strategy_doc": "docs/01-strategy.md; per project",
+    "claude_md": "Project CLAUDE.md; per project",
+    "brand_guidelines": "Brand kit if available; per project"
+  },
+  "outputs": {
+    "storyboard_doc": "docs/02-storyboard.md; per project"
+  },
+  "dependencies": ["snap_001", "snap_002"]
+}

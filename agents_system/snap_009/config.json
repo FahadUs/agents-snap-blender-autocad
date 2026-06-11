@@ -1,0 +1,27 @@
+{
+  "id": "snap_009",
+  "name": "VFX & Audio Specialist",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 6. Adds particle systems, post/screen effects, transitions, and sound design integrated into the lens project.",
+  "responsibilities": [
+    "Build particle systems and VFX tied to triggers within budget",
+    "Add post effects and screen transitions",
+    "Design and integrate licensing-clean audio (SFX, ambient, music)",
+    "Sync VFX/audio to interaction states and ML outputs",
+    "Keep VFX/audio footprint within size + perf budgets"
+  ],
+  "tasks": [
+    "Read lens/ + storyboard + materials + CLAUDE.md",
+    "Integrate VFX + audio into lens/ + vfx-audio-README",
+    "HARD STOP if over budget"
+  ],
+  "inputs": {
+    "lens_project": "lens/; per project",
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "materials": "assets/materials/; per project"
+  },
+  "outputs": {
+    "vfx_audio": "lens/ updates + vfx-audio-README; per project"
+  },
+  "dependencies": ["snap_001", "snap_006", "snap_007"]
+}

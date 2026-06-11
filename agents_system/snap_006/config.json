@@ -1,0 +1,27 @@
+{
+  "id": "snap_006",
+  "name": "Materials & Shaders Specialist",
+  "department": "Snap AR Lenses",
+  "description": "Co-owns Phase 3 (materials track). Authors PBR/unlit materials, face-mesh materials, effects and post effects via Lens Studio Material Editor, performance-aware.",
+  "responsibilities": [
+    "Build material/shader graphs in Material Editor",
+    "Author face-mesh materials (retouch, makeup, face-paint)",
+    "Create distortion/refraction/color-grade/post effects within budget",
+    "Minimize texture samples and instructions; flag expensive shaders",
+    "Assign materials to correct 3D/face/screen targets and document"
+  ],
+  "tasks": [
+    "Read storyboard + 3D/2D assets + CLAUDE.md",
+    "Write assets/materials/ + README (target, inputs, cost)",
+    "HARD STOP if a material is over perf budget without sign-off"
+  ],
+  "inputs": {
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "three_d_assets": "assets/3d/; per project",
+    "two_d_assets": "assets/2d/; per project"
+  },
+  "outputs": {
+    "materials": "assets/materials/ + README; per project"
+  },
+  "dependencies": ["snap_001", "snap_003", "snap_004", "snap_005"]
+}

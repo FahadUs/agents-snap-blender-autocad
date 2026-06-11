@@ -1,0 +1,26 @@
+{
+  "id": "snap_010",
+  "name": "Performance & Optimization",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 7. Brings the lens within Snap size and performance budgets via texture/mesh/shader/script optimization. HARD STOP if over budget.",
+  "responsibilities": [
+    "Measure lens size, FPS, draw calls, texture memory, poly count",
+    "Optimize textures (atlas, downscale, recompress)",
+    "Optimize meshes (decimate, LOD, merge, reduce bones)",
+    "Simplify expensive shaders/VFX and cap particles",
+    "Reduce per-frame script and ML work; re-measure on low-end device"
+  ],
+  "tasks": [
+    "Read lens/ + CLAUDE.md budgets + device matrix",
+    "Produce docs/07-optimization.md (before/after)",
+    "HARD STOP: never pass if over size/FPS budget"
+  ],
+  "inputs": {
+    "lens_project": "lens/ (full); per project",
+    "claude_md": "Size + FPS budget + device matrix; per project"
+  },
+  "outputs": {
+    "optimization_report": "docs/07-optimization.md; per project"
+  },
+  "dependencies": ["snap_001", "snap_006", "snap_007", "snap_008", "snap_009"]
+}

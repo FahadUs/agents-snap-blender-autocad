@@ -1,0 +1,28 @@
+{
+  "id": "blender_001",
+  "name": "Blender MCP Coordinator",
+  "department": "Blender 3D",
+  "description": "Entry point for Blender work via the Blender MCP server. Runs the connection boot check, routes to specialists (blender_002-007 / snap_blender_001), enforces save-before-code and screenshot verification.",
+  "responsibilities": [
+    "Boot check: MCP tools loaded + addon connected (get_scene_info)",
+    "Route to the correct Blender specialist",
+    "Enforce save-before-execute_blender_code and visual verification",
+    "Record asset licenses; ensure exports pass verify_3d_asset.ps1",
+    "Consolidate and hand off results"
+  ],
+  "tasks": [
+    "Confirm MCP connection before any action",
+    "Route by need (modeling/materials/assets/AI-gen/scripting/export/snap-prep)",
+    "Verify each step with get_viewport_screenshot"
+  ],
+  "inputs": {
+    "user_task": "3D request; per session",
+    "mcp_blender": "Blender MCP tools (mcp__blender__*); runtime",
+    "scene_state": "get_scene_info; per action"
+  },
+  "outputs": {
+    "delegation": "Routed task + verification; per delegation",
+    "result": "Completed 3D asset/scene + screenshots + license notes; per task"
+  },
+  "dependencies": ["blender_002","blender_003","blender_004","blender_005","blender_006","blender_007","snap_blender_001"]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "blender_007",
+  "name": "Export & Optimize",
+  "department": "Blender 3D",
+  "description": "Exports clean optimized models (GLB/FBX/OBJ) for the target platform within size/poly budgets via Blender MCP; verifies with verify_3d_asset.ps1.",
+  "responsibilities": ["Pre-export checklist (apply scale, origin, normals, purge)","Export GLB via bpy","Optimize (decimate/Draco/WebP/LOD)","Verify output + record manifest"],
+  "tasks": ["Run pre-export checks","Export","Optimize for target","verify_3d_asset.ps1 + manifest"],
+  "inputs": {"model":"scene/object to export; per task","target":"web/mobile/lens; per task"},
+  "outputs": {"exported_model":"valid optimized GLB + verify pass + manifest; per task"},
+  "dependencies": ["blender_001","blender_006"]
+}

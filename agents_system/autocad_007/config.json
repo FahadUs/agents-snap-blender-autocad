@@ -1,0 +1,25 @@
+{
+  "id": "autocad_007",
+  "name": "AutoCAD Export & Headless",
+  "department": "AutoCAD CAD",
+  "description": "Output specialist: exports DXF/DWG, plots to PDF via the drawing tool, and owns the ezdxf headless backend for generating DXF files with no AutoCAD running. Verifies outputs before handoff.",
+  "responsibilities": [
+    "Export drawings to DXF/DWG and plot to PDF",
+    "Operate the ezdxf headless backend for no-AutoCAD 2D DXF generation",
+    "Verify exported files open and contain the expected entities",
+    "Record output paths and formats for downstream use"
+  ],
+  "tasks": [
+    "Export/plot to the requested format",
+    "Generate DXF headlessly via ezdxf when AutoCAD is unavailable",
+    "Verify the output file is valid"
+  ],
+  "inputs": {
+    "task": "Export/plot request + format + path; per task",
+    "drawing_state": "final drawing; per task"
+  },
+  "outputs": {
+    "files": "DXF/DWG/PDF + verification note; per task"
+  },
+  "dependencies": ["autocad_001"]
+}

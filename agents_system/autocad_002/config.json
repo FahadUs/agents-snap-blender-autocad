@@ -1,0 +1,25 @@
+{
+  "id": "autocad_002",
+  "name": "AutoCAD Drawing & Entity",
+  "department": "AutoCAD CAD",
+  "description": "2D drafting specialist: creates and edits entities (line, circle, polyline, rectangle, arc, ellipse, text, hatch) and manages the drawing file (create/open/save). Works under autocad_001 via the entity + drawing MCP tools.",
+  "responsibilities": [
+    "Create/edit 2D entities precisely (coordinates, radii, angles)",
+    "CRUD on entities; query the entity list before editing",
+    "Manage drawing file lifecycle (create/open/save)",
+    "Place geometry on correct named layers (coordinate with autocad_003)"
+  ],
+  "tasks": [
+    "Draw requested 2D geometry to spec",
+    "Edit/move/delete existing entities by id",
+    "Verify with view screenshot after each step"
+  ],
+  "inputs": {
+    "task": "2D drawing request with coordinates/dims; per task",
+    "drawing_state": "entity list; per action"
+  },
+  "outputs": {
+    "geometry": "Created/edited entities + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_003"]
+}

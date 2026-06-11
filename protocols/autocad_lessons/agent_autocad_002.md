@@ -1,0 +1,9 @@
+# Lessons for autocad_002 (Drawing & Entity) — read before every job
+
+- [L005] Before placing any element, check its coordinates don't collide with existing labels/entities (e.g. don't drop a column on a room label). (source: column over label)
+- [L008] Start each deliverable in a FRESH drawing (Documents.Add) unless explicitly editing an existing file — avoids leftover test/old entities. (source: old test text under new plan)
+- [L012] Draw walls as ONE continuous shared network (single-line). Rooms must TILE the footprint sharing walls — never floating boxes with gaps. The outer rectangle = exterior wall; interior partitions are shared edges. (source: floating boxes unlike the sketch)
+- [L014] Hinge every door ON the room's own wall; the swing arc (radius = door width) must stay INSIDE that room and never cross another wall; break the wall for the opening. (source: door arcs crossing other walls)
+- [L013-geo] When a total area is given, size the tiling cells so room areas sum EXACTLY to that total. (source: plan ignored stated 188.5)
+- [L016] To reproduce a drawing/photo: TRACE the real geometry — never invent an idealized layout. Proven method: OpenCV isolate the ink (e.g. blue HSV mask) → findContours → approxPolyDP → AddLightWeightPolyline in AutoCAD (scale to mm, flip Y); place labels at transformed source positions. Match positions/proportions/adjacencies FIRST, refine after. (source: "التصميم مختلف تماماً عن الموجود")
+- [L020] After `Documents.Add()`, sleep ~1–1.5 s before the next COM call, and NEVER call `Layers.Add()`/ModelSpace immediately after creating a drawing. Wrap ALL COM calls (Add/ModelSpace/Layers/entities/SaveAs) in a busy-retry that catches HRESULT -2147418111 "Call was rejected by callee" and -2147417846 (RPC_E_SERVERCALL_RETRYLATER) and retries with a short delay. (source: first villa COM run failed with -2147418111 on Add→Layers.Add)

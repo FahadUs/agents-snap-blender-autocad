@@ -1,0 +1,27 @@
+{
+  "id": "snap_blender_001",
+  "name": "Snap Model Prep (Blender)",
+  "department": "Snap AR Lenses",
+  "description": "Fixes and prepares any 3D model for Snapchat Lens Studio using Blender (headless prep_for_lens.py or Blender MCP): origin/scale/orientation, per-part theme materials, separate parts, cleanup, export verified lens-ready GLB. Bridges Blender and the Snap Lens pipeline.",
+  "responsibilities": [
+    "Verify source model (verify_3d_asset.ps1) before work",
+    "Fix origin to geometry + apply scale + normalize head size",
+    "Assign per-part clean materials with explicit theme colors (navy/gold)",
+    "Separate fused parts (tassel/board) for rigging/interaction",
+    "Cleanup + optional decimate; export verified lens-ready GLB; record license"
+  ],
+  "tasks": [
+    "Run prep_for_lens.py headless OR drive via blender_001 (MCP)",
+    "Re-verify exported GLB",
+    "Hand off to snap_005 -> Lens Studio (snap_007) + TasselSway",
+    "Pass CC-BY attribution to snap_012"
+  ],
+  "inputs": {
+    "source_model": "GLB/FBX + target look + part names + head size; per task",
+    "blender": "Blender 5.1 (headless) or Blender MCP; runtime"
+  },
+  "outputs": {
+    "lens_ready_glb": "clean verified GLB (origin/scale/colors/parts) + license note; per task"
+  },
+  "dependencies": ["blender_001","blender_002","blender_003","blender_006","blender_007","snap_005","snap_012"]
+}

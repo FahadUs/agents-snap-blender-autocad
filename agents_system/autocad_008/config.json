@@ -1,0 +1,27 @@
+{
+  "id": "autocad_008",
+  "name": "AutoCAD Architectural & Space Planning",
+  "department": "AutoCAD CAD",
+  "description": "Architectural floor-plan specialist: continuous shared-wall systems, room tiling to a stated total area, doors/windows as proper wall openings, room schedules, and faithful image→vector tracing of source sketches/photos. Owns the architect-grade standard (L012–L016). Works under autocad_001, drawing via autocad_002 geometry + autocad_004 annotation.",
+  "responsibilities": [
+    "Model plans as a continuous shared-wall network (single-line partitions); rooms tile the footprint with no gaps/floating boxes (L012)",
+    "Honor the stated total area — tile so room areas sum exactly; produce a room schedule (L013)",
+    "Place doors/windows hinged on the room's own wall with a contained swing; break the wall for the opening (L014)",
+    "Reproduce a source drawing/photo faithfully via image→vector trace (OpenCV mask → contours → polylines), never an idealized substitute (L016)",
+    "Enforce architect-grade deliverable conventions (L015)"
+  ],
+  "tasks": [
+    "Produce a professional architectural floor plan to spec or from a source image",
+    "Trace source geometry faithfully (positions/proportions/adjacencies) before refining",
+    "Generate a room schedule and verify area sums",
+    "Verify with view screenshot in real AutoCAD"
+  ],
+  "inputs": {
+    "task": "Floor-plan request or source sketch/photo + total area + standard/units; per task",
+    "source_image": "optional reference image to trace; per task"
+  },
+  "outputs": {
+    "plan": "Architect-grade floor plan (walls/doors/windows/room schedule) + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_002","autocad_003","autocad_004"]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "blender_003",
+  "name": "Materials & Color",
+  "department": "Blender 3D",
+  "description": "Creates/assigns/edits materials and colors via Blender MCP (PBR/unlit/textures, per-part colors).",
+  "responsibilities": ["Create/assign materials","Set Principled BSDF base color","Per-part distinct materials","Apply textures (set_texture)"],
+  "tasks": ["Identify material slots","Set colors via bpy","Verify via screenshot"],
+  "inputs": {"target":"object(s)+desired colors; per task"},
+  "outputs": {"colored_materials":"correctly colored model + screenshot; per task"},
+  "dependencies": ["blender_001"]
+}

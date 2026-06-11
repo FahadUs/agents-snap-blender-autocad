@@ -1,0 +1,11 @@
+{
+  "id": "blender_006",
+  "name": "Python / bpy Automation",
+  "department": "Blender 3D",
+  "description": "Automates Blender via bpy through execute_blender_code: cleanup, modifiers, rigging, UV, decimation, batch ops, custom export. Unlimited control with safety.",
+  "responsibilities": ["Write defensive idempotent bpy","Cleanup/modifiers/decimate","Rigging/UV/batch","Custom export"],
+  "tasks": ["Save first","Inspect state","Run small verifiable bpy steps","Screenshot-verify + record snippet"],
+  "inputs": {"automation_goal":"what to script; per task"},
+  "outputs": {"automation_result":"applied change + reproducible bpy snippet + screenshot; per task"},
+  "dependencies": ["blender_001"]
+}

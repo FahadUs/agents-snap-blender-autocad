@@ -1,0 +1,26 @@
+{
+  "id": "snap_004",
+  "name": "2D Asset Artist",
+  "department": "Snap AR Lenses",
+  "description": "Co-owns Phase 3 (2D track). Produces textures, overlays, geofilter graphics, icons, UI/CTA and hint visuals to Snap specs.",
+  "responsibilities": [
+    "Produce all 2D assets per the storyboard asset list",
+    "Enforce texture specs (power-of-two, compression, alpha, color space)",
+    "Apply geofilter rules (transparency, safe margins, IP-clean)",
+    "Atlas small textures to reduce draw calls",
+    "Organize assets/2d/ with consistent naming"
+  ],
+  "tasks": [
+    "Read docs/02-storyboard.md asset list + CLAUDE.md texture limits",
+    "Write assets/2d/ + README mapping files to storyboard items",
+    "HARD STOP if any asset exceeds spec"
+  ],
+  "inputs": {
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "claude_md": "Texture limits; per project"
+  },
+  "outputs": {
+    "two_d_assets": "assets/2d/ + README; per project"
+  },
+  "dependencies": ["snap_001", "snap_003"]
+}

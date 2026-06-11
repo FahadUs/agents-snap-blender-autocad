@@ -1,0 +1,27 @@
+{
+  "id": "snap_007",
+  "name": "Lens Studio Engineer",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 4. Assembles the Lens Studio project: scene graph, tracking, and JS/TS behavior, wiring Phase 3 assets into a working lens.",
+  "responsibilities": [
+    "Build scene graph and import assets",
+    "Configure Face/World/Hand/Body tracking and Segmentation",
+    "Implement triggers, state machine, tweens, events in JS/TS",
+    "Add interactivity (Behavior/Tween/custom components, Bitmoji, Connected Lenses)",
+    "Add UI hints and CTA; expose slots for SnapML/VFX/audio"
+  ],
+  "tasks": [
+    "Read assets/* + storyboard + CLAUDE.md",
+    "Build lens/ project with modular lens/scripts/*.ts + README",
+    "HARD STOP if any storyboard interaction missing"
+  ],
+  "inputs": {
+    "assets": "assets/2d, assets/3d, assets/materials; per project",
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "claude_md": "Tracking + Lens Studio version; per project"
+  },
+  "outputs": {
+    "lens_project": "lens/ (scene + scripts + resources) + README; per project"
+  },
+  "dependencies": ["snap_001", "snap_003", "snap_004", "snap_005", "snap_006"]
+}

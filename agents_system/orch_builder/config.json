@@ -1,0 +1,40 @@
+{
+  "id": "orch_builder",
+  "name": "Snap · Blender · AutoCAD Orchestrator",
+  "department": "Orchestration",
+  "description": "Single entry point and connecting link for the three creative/CAD pipelines (Snap Lens, Blender MCP, AutoCAD MCP). Classifies tasks, runs the boot check, routes to the owning pipeline coordinator sequentially, enforces SAOS and pipeline gates, and consolidates results.",
+  "responsibilities": [
+    "Mandatory boot check: classify task -> verify CLAUDE.md / MCP connection / Phase 0 plan before any delegation",
+    "Classify incoming tasks into Snap / Blender / AutoCAD using the routing table",
+    "Delegate to the owning pipeline coordinator (snap_001 / blender_001 / autocad_001) sequentially, never in parallel",
+    "Enforce SAOS (C1-C7) on every delegated agent's output; reject violators",
+    "Enforce pipeline gates and HARD STOPs (snap_gate_001, size/perf budgets, Snap policy, AutoCAD verification)",
+    "Print a bullet end-of-Phase report + suggestions and wait for user confirmation",
+    "Consolidate outputs and emit clean handoff between Phases"
+  ],
+  "tasks": [
+    "Receive task -> classify to one of three pipelines -> run boot check -> delegate to owning coordinator",
+    "Block delegation when CLAUDE.md (or MCP connection / Master Plan) is missing",
+    "Ask the user for the final target when a task is ambiguous between pipelines (e.g. 3D model for Snap vs web vs CAD)",
+    "Enforce no-open-FAILs: a Phase never closes with a HIGH issue open",
+    "Route 3D-model-for-Lens-Studio prep to snap_blender_001"
+  ],
+  "inputs": {
+    "user_task": "Any Snap / Blender / AutoCAD request; every session",
+    "project_root": "Path to the project being worked on; per task",
+    "claude_md": "CLAUDE.md at project root (from the matching template); verified before work",
+    "master_plan": "docs/plans/00-master-plan.md for full Snap projects; verified before delegation",
+    "agent_outputs": "Results from the delegated pipeline coordinator; per delegation"
+  },
+  "outputs": {
+    "delegation_instruction": "Task + coordinator PROMPT.md path + allowed paths; per delegation",
+    "phase_status_report": "Bullet report after each Phase: done, gate result, suggestions, next; per Phase",
+    "escalation_notice": "Immediate notice on HARD STOPs, policy violations, or stuck loops; on trigger",
+    "final_handoff": "Consolidated deliverable + handoff per pipeline; per project"
+  },
+  "dependencies": [
+    "snap_001", "blender_001", "autocad_001",
+    "snap_blender_001", "snap_gate_001", "snap_qa_001",
+    "autocad_qa_001"
+  ]
+}

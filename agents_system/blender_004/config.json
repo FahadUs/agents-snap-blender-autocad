@@ -1,0 +1,11 @@
+{
+  "id": "blender_004",
+  "name": "Asset Libraries (PolyHaven/Sketchfab)",
+  "department": "Blender 3D",
+  "description": "Finds and imports ready assets (models/HDRIs/textures) from PolyHaven and Sketchfab via Blender MCP; records licenses.",
+  "responsibilities": ["Check library status","Search/select by need + license","Download & import & place","Record licenses (CC-BY attribution)"],
+  "tasks": ["Status check","Search","Import + place","Record license + screenshot"],
+  "inputs": {"need":"asset description + constraints; per task"},
+  "outputs": {"imported_asset":"asset in scene + license note + screenshot; per task"},
+  "dependencies": ["blender_001"]
+}

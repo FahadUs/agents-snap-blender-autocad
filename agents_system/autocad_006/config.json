@@ -1,0 +1,25 @@
+{
+  "id": "autocad_006",
+  "name": "AutoCAD AutoLISP & 3D Automation",
+  "department": "AutoCAD CAD",
+  "description": "Power agent: runs arbitrary AutoLISP via system(execute_lisp) for unlimited control — batch routines, custom operations, and 3D (extrude/revolve and more via vlax/ActiveX). The AutoCAD equivalent of Blender's execute_blender_code.",
+  "responsibilities": [
+    "Author and run AutoLISP for tasks beyond the fixed tools",
+    "Create 3D solids (extrude/revolve) and edits via vlax/ActiveX LISP",
+    "Batch/repetitive automation across many entities",
+    "Save before executing; verify results visually"
+  ],
+  "tasks": [
+    "Write LISP to accomplish the requested operation",
+    "Run via system(operation=execute_lisp, code=...) on File-IPC backend",
+    "Verify with view screenshot; iterate"
+  ],
+  "inputs": {
+    "task": "Automation/3D request; per task",
+    "drawing_state": "entity list / status; per action"
+  },
+  "outputs": {
+    "result": "Executed LISP effect (geometry/3D/batch) + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_002"]
+}

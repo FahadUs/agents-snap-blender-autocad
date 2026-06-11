@@ -1,0 +1,26 @@
+{
+  "id": "autocad_009",
+  "name": "AutoCAD Sheet Layout & Plotting",
+  "department": "AutoCAD CAD",
+  "description": "Paper-space / sheet specialist: layouts, viewports with locked scale, title blocks (attributed), sheet sets, and plotting/publishing to PDF/DWF (single + batch). Turns model-space geometry into issue-ready sheets. Works under autocad_001; coordinates with autocad_003 (title-block blocks/attributes) and autocad_007 (export).",
+  "responsibilities": [
+    "Create paper-space layouts; place + scale + LOCK viewports to a stated drawing scale",
+    "Insert and fill an attributed title block (project/sheet no/scale/date/revision)",
+    "Configure page setup (sheet size, plot style table/CTB, lineweights) for professional output",
+    "Batch plot/publish multiple layouts to PDF/DWF",
+    "Warn on Education-license plot stamp (L010)"
+  ],
+  "tasks": [
+    "Build issue-ready sheets from model geometry at correct scale",
+    "Set up title block + sheet metadata",
+    "Plot/publish to PDF (single or batch) and verify output"
+  ],
+  "inputs": {
+    "task": "Sheet/plot request + sheet size + scale + title-block data; per task",
+    "model_state": "model-space geometry to present; per action"
+  },
+  "outputs": {
+    "sheets": "Paper-space layouts + plotted PDF/DWF; per task"
+  },
+  "dependencies": ["autocad_001","autocad_003","autocad_007"]
+}

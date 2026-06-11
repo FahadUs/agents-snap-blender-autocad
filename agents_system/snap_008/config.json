@@ -1,0 +1,28 @@
+{
+  "id": "snap_008",
+  "name": "SnapML / ML Engineer",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 5 (optional). Builds and integrates a custom neural network via the SnapML ML Component (segmentation, style transfer, classification, detection).",
+  "responsibilities": [
+    "Define the ML task and on-device output",
+    "Curate dataset with licensing/bias notes",
+    "Train a small, SnapML-exportable model within latency budget",
+    "Export to ONNX/SnapML-compatible format and verify tensor specs",
+    "Integrate ML Component into lens/ and validate accuracy + FPS on device"
+  ],
+  "tasks": [
+    "Read strategy + storyboard + lens ML slot + CLAUDE.md",
+    "Produce ml/ (training, model, labels, README)",
+    "HARD STOP if latency breaks FPS budget"
+  ],
+  "inputs": {
+    "strategy_doc": "docs/01-strategy.md; per project",
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "lens_project": "lens/ ML slot; per project",
+    "claude_md": "Latency/FPS budget; per project"
+  },
+  "outputs": {
+    "ml_artifacts": "ml/ (training, model, labels, README); per project"
+  },
+  "dependencies": ["snap_001", "snap_007"]
+}

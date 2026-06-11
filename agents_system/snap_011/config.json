@@ -1,0 +1,28 @@
+{
+  "id": "snap_011",
+  "name": "QA & Device Testing",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 8. Validates the lens on real devices across conditions: functional, visual, interaction, stability, regression. No open FAILs.",
+  "responsibilities": [
+    "Define and run a device matrix (low/high end, iOS/Android)",
+    "Test every trigger/state and ML output functionally",
+    "Verify visual alignment across lighting, multiple faces, no-face fallback",
+    "Verify UX hints/CTA and gesture onboarding",
+    "Check stability (no crashes/leaks/FPS decay) and regression"
+  ],
+  "tasks": [
+    "Read lens/ + storyboard + optimization report + CLAUDE.md matrix",
+    "Produce docs/08-qa-report.md (test matrix + issues)",
+    "HARD STOP if any open HIGH issue"
+  ],
+  "inputs": {
+    "lens_project": "lens/ (optimized); per project",
+    "storyboard_doc": "docs/02-storyboard.md; per project",
+    "optimization_report": "docs/07-optimization.md; per project",
+    "claude_md": "Device matrix; per project"
+  },
+  "outputs": {
+    "qa_report": "docs/08-qa-report.md; per project"
+  },
+  "dependencies": ["snap_001", "snap_007", "snap_010"]
+}

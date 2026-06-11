@@ -1,0 +1,25 @@
+{
+  "id": "autocad_003",
+  "name": "AutoCAD Layers & Blocks",
+  "department": "AutoCAD CAD",
+  "description": "Drawing-organization specialist: manages layers (create/freeze/thaw/lock/unlock) and blocks (insert/define + attributes) via the layer + block MCP tools. Establishes the layer standard the other agents draw onto.",
+  "responsibilities": [
+    "Create and manage layers per the project standard (name/color/linetype)",
+    "Freeze/thaw and lock/unlock layers",
+    "Define and insert blocks; manage block attributes",
+    "Serve as the layer authority for autocad_002/004/005"
+  ],
+  "tasks": [
+    "Build the layer set from the drawing standard",
+    "Insert/define blocks and set attribute values",
+    "Verify layer state and block placement via screenshot"
+  ],
+  "inputs": {
+    "task": "Layer/block request + standard; per task",
+    "drawing_state": "layer list / block table; per action"
+  },
+  "outputs": {
+    "structure": "Configured layers + placed/defined blocks + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_002"]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "snap_014",
+  "name": "Lens Game Designer",
+  "department": "Snap AR Lenses",
+  "description": "Designs AR Lens Games (single-player, session-based) built in Lens Studio. Defines core mechanic, game loop/states, scoring, difficulty, entities, feedback, and a tuning table. Out of scope: Snap Games/Bitmoji multiplayer platform.",
+  "responsibilities": [
+    "Define one clear core mechanic + the Snap input that drives it",
+    "Design game loop and states (Idle/Start/Playing/GameOver/Retry)",
+    "Specify scoring, lives/timer, difficulty ramp, win condition",
+    "Define entities (player, spawnables, pickups) and spawn rules",
+    "Map feedback (SFX/VFX/UI) per event and produce a typed asset list + tuning table"
+  ],
+  "tasks": [
+    "Read docs/01-strategy.md + game brief + CLAUDE.md",
+    "Produce docs/02b-game-design.md",
+    "Flag and stop if request is for Snap Games multiplayer platform (out of scope)",
+    "HARD STOP if mechanic/loop ambiguous"
+  ],
+  "inputs": {
+    "strategy_doc": "docs/01-strategy.md; per project",
+    "game_brief": "Game concept/idea; per project",
+    "claude_md": "Project CLAUDE.md; per project"
+  },
+  "outputs": {
+    "game_design_doc": "docs/02b-game-design.md (mechanic, loop, scoring, entities, tuning); per project"
+  },
+  "dependencies": ["snap_001", "snap_002", "snap_003"]
+}

@@ -1,0 +1,27 @@
+# Secrets & credentials — never commit
+*.env
+.env*
+*.key
+*.pem
+*secret*
+*credential*
+CLAUDE.md.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# Python / build
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local project outputs (keep prompts, not generated artifacts)
+/output/
+/build/
+/dist/

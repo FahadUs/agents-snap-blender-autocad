@@ -1,0 +1,40 @@
+{
+  "id": "snap_001",
+  "name": "Snap Lens Pipeline Coordinator",
+  "department": "Snap AR Lenses",
+  "description": "Entry point (under orch_001) for all Snapchat filter/lens projects. Runs boot check, routes each Phase to the owning snap_* agent sequentially, enforces gates and HARD STOPs, reports at every Phase end.",
+  "responsibilities": [
+    "Boot check: verify CLAUDE.md and docs/plans/00-master-plan.md before any delegation",
+    "Produce and get approval for Phase 0 Master Plan",
+    "Route Phases 1-10 to owning snap_* agents sequentially, never in parallel",
+    "Enforce snap_gate_001 after Phases 3,4,5,6,8",
+    "Enforce HARD STOPs at Phase 7 (size/perf budget) and Phase 9 (Snap policy)",
+    "Print bullet report + suggestions and wait for user confirmation at each Phase end",
+    "Consolidate outputs and emit handoff between Phases"
+  ],
+  "tasks": [
+    "Receive lens task -> boot check -> approve Master Plan -> route by lens type",
+    "Skip 3D/Materials/SnapML phases for simple Filters/Geofilters",
+    "Include Phase 5 only when SnapML is required",
+    "Block Phase progression on any open HIGH issue (no open FAILs)",
+    "Loop back to snap_010 if over budget; loop back to snap_012 on policy fail"
+  ],
+  "inputs": {
+    "user_task": "Lens/filter request; every session",
+    "claude_md": "CLAUDE.md at project root from CLAUDE_snap_lens_template.md; per project",
+    "master_plan": "docs/plans/00-master-plan.md; per project",
+    "agent_outputs": "Deliverables from snap_002..snap_013; per Phase",
+    "gate_reports": "snap_gate_001 results; per gated Phase"
+  },
+  "outputs": {
+    "delegation_instruction": "Phase task + PROMPT.md path + allowed paths to each snap_* agent; per delegation",
+    "phase_status_report": "Bullet report after each Phase: done, gate result, suggestions, next; per Phase",
+    "master_plan_artifact": "docs/plans/00-master-plan.md; per project",
+    "final_handoff": "Buildable lens project + submission package; per project"
+  },
+  "dependencies": [
+    "snap_002", "snap_003", "snap_004", "snap_005", "snap_006", "snap_007",
+    "snap_008", "snap_009", "snap_010", "snap_011", "snap_012", "snap_013",
+    "snap_gate_001"
+  ]
+}

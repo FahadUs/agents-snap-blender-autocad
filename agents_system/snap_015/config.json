@@ -1,0 +1,28 @@
+{
+  "id": "snap_015",
+  "name": "Gameplay Engineer",
+  "department": "Snap AR Lenses",
+  "description": "Implements AR Lens Game logic in Lens Studio (JS/TS): GameManager state machine, spawner with pooling, scoring/lives/timer, input mapping (face triggers/tap/head-tilt), collision, difficulty ramp, game-over/retry. Single-player only.",
+  "responsibilities": [
+    "Build GameManager state machine (Idle/Playing/GameOver) with exposed tuning @inputs",
+    "Wire the chosen Snap input (Behavior face trigger / tap / head-tilt) to actions",
+    "Implement spawner with object pooling and despawn",
+    "Implement scoring/lives/timer + UI updates + SFX/VFX triggers",
+    "Implement difficulty ramp and game-over/retry flow"
+  ],
+  "tasks": [
+    "Read docs/02b-game-design.md + assets + lens scene + CLAUDE.md",
+    "Write lens/scripts (GameManager + helpers) + game-README",
+    "Expose tuning as @input; coordinate perf with snap_010",
+    "HARD STOP if any design rule unimplemented or FPS drops on low-end"
+  ],
+  "inputs": {
+    "game_design_doc": "docs/02b-game-design.md; per project",
+    "assets": "assets/* and SFX/VFX; per project",
+    "lens_project": "lens/ scene from snap_007; per project"
+  },
+  "outputs": {
+    "game_scripts": "lens/scripts/GameManager.js (+ helpers) + game-README; per project"
+  },
+  "dependencies": ["snap_001", "snap_014", "snap_007", "snap_009"]
+}

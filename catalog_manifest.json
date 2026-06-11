@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-06-11",
+  "orchestrator": "orch_builder",
+  "description": "Standalone catalog for three creative/CAD pipelines (Snap Lens, Blender MCP, AutoCAD MCP). orch_builder is the single entry point and connecting link; it classifies each task and routes to the owning pipeline coordinator (snap_001 / blender_001 / autocad_001) sequentially.",
+  "catalog_root": "C:/Users/fahad/OneDrive/Desktop/AgentsSnapBlenderAutoCAD",
+  "agents_root": "C:/Users/fahad/OneDrive/Desktop/AgentsSnapBlenderAutoCAD/agents_system",
+  "loading_rules": {
+    "agent_default": "Load only the catalog_file for the pipeline where you are primary, backup, or contributor. Never load other pipeline files unless explicitly requested.",
+    "manifest_consultation": "Read this manifest first; orch_builder identifies the owning pipeline coordinator before any delegation.",
+    "senior_agent_operating_standard": "MANDATORY for ALL agents: read and comply with C:/Users/fahad/OneDrive/Desktop/AgentsSnapBlenderAutoCAD/protocols/Senior_Agent_Operating_Standard.md (SAOS) before producing any output. Every output must be standards-grounded (C1), ASK-don't-guess (C2), methodology-driven (C3), coverage-traceable (C4), HARD-STOP before handoff (C5), clean-encoded (C6), and pass its Definition of Done (C7)."
+  },
+  "entry_point": {
+    "agent": "orch_builder",
+    "prompt": "agents_system/orch_builder/PROMPT.md",
+    "routing": {
+      "Snap / فلاتر / عدسات / Lens / SnapML": "snap_001",
+      "Blender / 3D / موديل / مواد / render": "blender_001",
+      "3D model prep for Lens Studio": "snap_blender_001",
+      "AutoCAD / DWG / DXF / P&ID / رسم هندسي": "autocad_001"
+    }
+  },
+  "systems": {
+    "Snap_AR_Lenses": {
+      "catalog_file": "protocols/snap_lens_delivery_pipeline.md",
+      "primary_owner": "snap_001",
+      "backup_owner": "snap_007",
+      "contributors": [
+        "snap_002",
+        "snap_003",
+        "snap_004",
+        "snap_005",
+        "snap_006",
+        "snap_008",
+        "snap_009",
+        "snap_010",
+        "snap_011",
+        "snap_012",
+        "snap_013",
+        "snap_014",
+        "snap_015",
+        "snap_016",
+        "snap_017",
+        "snap_blender_001",
+        "snap_gate_001",
+        "snap_qa_001"
+      ],
+      "pipeline": "snap_lens_delivery_pipeline",
+      "model_prep": "snap_blender_001 + protocols/snap_blender_prep_pipeline.md (fix/prepare 3D models for Lens Studio via Blender)",
+      "game_support": "AR Lens Games (single-player) via snap_014 (design) + snap_015 (engineering) + protocols/snap_game_templates/. NOT Snap Games/Bitmoji multiplayer platform.",
+      "beauty_makeup": "snap_016 (AR Beauty/Makeup Specialist) — Face Retouch/Eye Color/Color Correction + Face Mesh makeup (lashes/blush on face UV). RULE: makeup = Face Mesh texture, NOT Image on eye-attachment (won't render).",
+      "file_engineering": "snap_017 (LS File-Format Engineer) — direct BOM-safe editing of Scene.scene/.mat/ss_graph/GUIDs when GUI automation fails.",
+      "pipeline_qa": "snap_qa_001 (Pipeline QA, Monitoring & Retrospective) — tests every phase visually, attributes defects to the responsible snap_* agent, teaches the lesson back (closed learning loop). Runs under snap_001. Verifies effects actually RENDER, not just exist in Hierarchy.",
+      "build_playbook": "protocols/snap_lensstudio_build_playbook.md",
+      "claude_template": "protocols/CLAUDE_snap_lens_template.md",
+      "related_systems": [
+        "AI_Engineering",
+        "Marketing",
+        "Content_Management"
+      ],
+      "_note": "Snapchat filters (2D/Geofilter) and AR Lenses (Lens Studio) including SnapML. snap_001 is the entry point under orch_001 and never does domain work; it routes Phases sequentially to snap_002..snap_013 with snap_gate_001 as quality gate. Every lens project needs a CLAUDE.md from claude_template. HARD STOPs at Phase 7 (size/perf) and Phase 9 (Snap submission policy)."
+    },
+    "Blender_MCP": {
+      "catalog_file": "protocols/blender_mcp_pipeline.md",
+      "primary_owner": "blender_001",
+      "backup_owner": "blender_006",
+      "contributors": [
+        "blender_002",
+        "blender_003",
+        "blender_004",
+        "blender_005",
+        "blender_006",
+        "blender_007",
+        "snap_blender_001",
+        "design_3d_001"
+      ],
+      "pipeline": "blender_mcp_pipeline",
+      "mcp_server": "blender (ahujasid/blender-mcp) registered in ~/.claude.json; command C:/Users/fahad/.local/bin/blender-mcp.exe",
+      "blender": "C:/Program Files/Blender Foundation/Blender 5.1/blender.exe",
+      "addon": "C:/SnapLenses/_blender_mcp/addon.py",
+      "related_systems": [
+        "Snap_AR_Lenses"
+      ],
+      "_note": "Drive Blender 5.1 directly via MCP (21 tools: scene/inspect, execute_blender_code, materials, PolyHaven, Sketchfab, Hyper3D Rodin gen). Runtime needs: Claude restarted (to load mcp__blender__*) + Blender open with addon Connected. Feeds snap_blender_001 (Snap model prep) and design_3d_001 (web 3D). Verify visually via get_viewport_screenshot; exports pass tools/verify_3d_asset.ps1."
+    },
+    "AutoCAD_MCP": {
+      "catalog_file": "protocols/autocad_mcp_pipeline.md",
+      "primary_owner": "autocad_001",
+      "backup_owner": "autocad_006",
+      "contributors": [
+        "autocad_002",
+        "autocad_003",
+        "autocad_004",
+        "autocad_005",
+        "autocad_006",
+        "autocad_007",
+        "autocad_008",
+        "autocad_009",
+        "autocad_research_001",
+        "autocad_qa_001"
+      ],
+      "pipeline": "autocad_mcp_pipeline",
+      "improvement_pipeline": "protocols/autocad_improvement_pipeline.md (closed-loop self-learning, owner autocad_qa_001; runs at job START [LOAD lessons] + END [RETROSPECTIVE: capture→attribute→teach→verify]; stores in protocols/autocad_lessons/LEDGER.md + agent_<id>.md)",
+      "mcp_server": "puran-water/autocad-mcp v3.1 (registration in ~/.claude.json as 'autocad', launched via py312 interpreter)",
+      "claude_template": "protocols/CLAUDE_autocad_template.md",
+      "autocad": "C:/Program Files/Autodesk/AutoCAD 2026/acad.exe (Full v25.1.164.0)",
+      "python_env": "py312 = isolated uv-managed Python 3.12.13 at C:/AutoCAD_MCP/py312 — invoke C:/AutoCAD_MCP/py312/Scripts/python.exe (NEVER system 3.14). uv at C:/Users/fahad/.local/bin/uv.exe",
+      "status": "REGISTERED + CONNECTED (2026-06-09) — server cloned to C:/AutoCAD_MCP/autocad-mcp, deps in py312, MCP 'autocad' registered in ~/.claude.json (top-level, type stdio, launcher C:/AutoCAD_MCP/run_server.py, env AUTOCAD_MCP_BACKEND=auto), 'claude mcp list' shows Connected. PENDING: restart Claude to load mcp__autocad__* tools, then smoke test. For full File-IPC mode: open AutoCAD 2026 + APPLOAD C:/AutoCAD_MCP/autocad-mcp/lisp-code/mcp_dispatch.lsp (else ezdxf headless auto-fallback).",
+      "related_systems": [
+        "Blender_MCP"
+      ],
+      "bim_track": "Optional future autocad_bim_001 via Autodesk APS / AEC Data Model MCP (cloud BIM/Revit/ACC data queries; needs APS account). Documented in pipeline §6, not built.",
+      "_note": "Drive AutoCAD via MCP (8 consolidated tools: drawing, entity, layer, block, annotation, pid, view, system+execute_lisp). Two backends: File-IPC (needs AutoCAD running + mcp_dispatch.lsp via APPLOAD — full incl. P&ID/3D/LISP/PDF) and ezdxf (headless 2D DXF, no AutoCAD). autocad_001 is entry under orch_001; routes Phases 0-6 to autocad_002..009 (008=architectural floor plans/space planning/image-trace, 009=sheet layout/paper-space/plotting). autocad_research_001 runs as a gate at the END of Phase 0 (requirements analysis) BEFORE execution: maps required capabilities vs current agents+lessons, researches gaps, emits a Capability-Gap Report (PROCEED/SEED-FIRST/CREATE-FIRST); on approval routes seeding to autocad_qa_001 and new-agent creation to agent_factory_001. execute_lisp = AutoCAD analog of execute_blender_code. Verify visually via view(operation=screenshot). Windows-only for File-IPC. Sibling of Blender_MCP."
+    }
+  },
+  "agent_directory": {
+    "orchestration": [
+      "orch_builder"
+    ],
+    "snap": [
+      "snap_001",
+      "snap_002",
+      "snap_003",
+      "snap_004",
+      "snap_005",
+      "snap_006",
+      "snap_007",
+      "snap_008",
+      "snap_009",
+      "snap_010",
+      "snap_011",
+      "snap_012",
+      "snap_013",
+      "snap_014",
+      "snap_015",
+      "snap_016",
+      "snap_017",
+      "snap_blender_001",
+      "snap_gate_001",
+      "snap_qa_001"
+    ],
+    "blender": [
+      "blender_001",
+      "blender_002",
+      "blender_003",
+      "blender_004",
+      "blender_005",
+      "blender_006",
+      "blender_007"
+    ],
+    "autocad": [
+      "autocad_001",
+      "autocad_002",
+      "autocad_003",
+      "autocad_004",
+      "autocad_005",
+      "autocad_006",
+      "autocad_007",
+      "autocad_008",
+      "autocad_009",
+      "autocad_qa_001",
+      "autocad_research_001"
+    ]
+  }
+}

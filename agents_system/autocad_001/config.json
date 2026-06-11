@@ -1,0 +1,29 @@
+{
+  "id": "autocad_001",
+  "name": "AutoCAD MCP Coordinator",
+  "department": "AutoCAD CAD",
+  "description": "Entry point for AutoCAD/CAD work via the AutoCAD MCP server (puran-water v3.1). Runs the connection boot check, picks the backend (File-IPC vs ezdxf headless), routes to specialists (autocad_002-007), enforces save-before-LISP and screenshot verification.",
+  "responsibilities": [
+    "Boot check: MCP tools loaded + AutoCAD connected (system status) OR ezdxf backend selected",
+    "Pick the correct backend for the task (File-IPC full vs ezdxf headless)",
+    "Route to the correct AutoCAD specialist",
+    "Enforce save-before-execute_lisp and visual verification",
+    "Confirm units / standards / layers before mass production",
+    "Consolidate and hand off results"
+  ],
+  "tasks": [
+    "Confirm MCP/AutoCAD connection (or ezdxf) before any action",
+    "Route by need (draw/layers-blocks/annotation/P&ID/LISP-3D/export)",
+    "Verify each step with view screenshot"
+  ],
+  "inputs": {
+    "user_task": "CAD request; per session",
+    "mcp_autocad": "AutoCAD MCP tools (mcp__autocad__*); runtime",
+    "drawing_state": "system status / entity list; per action"
+  },
+  "outputs": {
+    "delegation": "Routed task + verification; per delegation",
+    "result": "Completed drawing/export + screenshots + standards notes; per task"
+  },
+  "dependencies": ["autocad_002","autocad_003","autocad_004","autocad_005","autocad_006","autocad_007"]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "snap_013",
+  "name": "Analytics & Iteration",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 10. Measures the published lens against KPIs, diagnoses performance, and produces a ranked iteration backlog feeding the next cycle.",
+  "responsibilities": [
+    "Pull lens metrics (views, plays, reach, share rate, play time, screenshots, scans)",
+    "Compare to Phase 1 KPIs and flag gaps",
+    "Diagnose drop-offs and share-trigger effectiveness",
+    "Segment by device/region/audience",
+    "Produce a ranked, actionable iteration backlog and pipeline lessons"
+  ],
+  "tasks": [
+    "Read metrics + docs/01-strategy.md KPIs + submission/",
+    "Produce docs/10-analytics.md (metrics vs KPI + backlog + lessons)"
+  ],
+  "inputs": {
+    "metrics": "My Lenses / Ads Manager metrics; per project",
+    "strategy_doc": "docs/01-strategy.md (KPIs); per project",
+    "submission_package": "submission/; per project"
+  },
+  "outputs": {
+    "analytics_doc": "docs/10-analytics.md; per project"
+  },
+  "dependencies": ["snap_001", "snap_002", "snap_012"]
+}

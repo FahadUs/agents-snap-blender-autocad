@@ -1,0 +1,28 @@
+{
+  "id": "snap_012",
+  "name": "Compliance & Publishing",
+  "department": "Snap AR Lenses",
+  "description": "Owns Phase 9. Verifies the lens against Snap Submission Guidelines, prepares the submission package, and publishes via My Lenses / Snap Ads Manager. HARD STOP on policy violation.",
+  "responsibilities": [
+    "Run Snap policy check (content, IP, audio, privacy, no misleading UI)",
+    "Confirm size/perf budget gate from snap_010",
+    "Prepare store package (copy, icon, screenshots, preview, keywords)",
+    "Generate and verify Snapcode",
+    "Publish via Lens Studio / My Lenses; sponsored via Snap Ads Manager",
+    "Record published links and version"
+  ],
+  "tasks": [
+    "Read lens/ + qa-report + brand/legal + CLAUDE.md",
+    "Produce submission/ (checklist, copy, screenshots, snapcode, links)",
+    "HARD STOP on any policy violation"
+  ],
+  "inputs": {
+    "lens_project": "lens/ (QA-passed); per project",
+    "qa_report": "docs/08-qa-report.md; per project",
+    "claude_md": "Compliance checklist; per project"
+  },
+  "outputs": {
+    "submission_package": "submission/ (+ README); per project"
+  },
+  "dependencies": ["snap_001", "snap_010", "snap_011"]
+}

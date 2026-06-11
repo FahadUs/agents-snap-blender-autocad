@@ -1,0 +1,25 @@
+{
+  "id": "autocad_004",
+  "name": "AutoCAD Annotation & Dimensions",
+  "department": "AutoCAD CAD",
+  "description": "Annotation specialist: adds dimensions (linear/aligned/angular/radius), leaders, and text via the annotation MCP tool, following the project dimension style and units.",
+  "responsibilities": [
+    "Add accurate dimensions (linear, aligned, angular, radius/diameter)",
+    "Add leaders and annotation text",
+    "Apply the project dimension style consistently",
+    "Place annotation on the correct annotation layer"
+  ],
+  "tasks": [
+    "Dimension the drawing per standard",
+    "Add callouts/leaders and notes",
+    "Verify dimension values and placement via screenshot"
+  ],
+  "inputs": {
+    "task": "Annotation request + dim style + units; per task",
+    "drawing_state": "entities to dimension; per action"
+  },
+  "outputs": {
+    "annotation": "Dimensions/leaders/text + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_003"]
+}

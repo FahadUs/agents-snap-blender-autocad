@@ -1,0 +1,30 @@
+{
+  "id": "autocad_qa_001",
+  "name": "AutoCAD Self-Improvement & Retrospective",
+  "department": "AutoCAD CAD",
+  "description": "Runs the AutoCAD Improvement Pipeline (closed-loop learning). LOADS accumulated lessons into the specialists before work, CAPTURES every correction/note, ATTRIBUTES each error to the responsible agent, TEACHES it a prevention rule, and VERIFIES the fix. Errors never repeat silently.",
+  "responsibilities": [
+    "LOAD: read LEDGER + each agent_<id>.md and inject rules into Phase 0",
+    "CAPTURE: log every correction/iteration/user note to LEDGER.md",
+    "ATTRIBUTE: find root cause + the responsible agent (who erred)",
+    "TEACH: append prevention rule to that agent's lessons (and PROMPT if hard)",
+    "VERIFY: confirm the corrected behavior before marking RESOLVED",
+    "PROMOTE recurring/critical lessons into agent PROMPT.md"
+  ],
+  "tasks": [
+    "On pipeline start: produce the lessons briefing per routed agent",
+    "During/after job: write attributed LEDGER entries",
+    "Update agent_<id>.md lesson files; promote hard rules"
+  ],
+  "inputs": {
+    "ledger": "protocols/autocad_lessons/LEDGER.md; per job",
+    "agent_lessons": "protocols/autocad_lessons/agent_<id>.md; per job",
+    "job_events": "corrections/iterations/user notes; during job"
+  },
+  "outputs": {
+    "briefing": "per-agent lessons injected at Phase 0; per job start",
+    "ledger_entries": "attributed issues + prevention rules; per correction",
+    "taught_rules": "updated agent_<id>.md (+ PROMPT.md for hard rules); per lesson"
+  },
+  "dependencies": ["autocad_001","autocad_002","autocad_003","autocad_004","autocad_005","autocad_006","autocad_007"]
+}

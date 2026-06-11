@@ -1,0 +1,25 @@
+{
+  "id": "autocad_005",
+  "name": "AutoCAD P&ID Specialist",
+  "department": "AutoCAD CAD",
+  "description": "Process & Instrumentation Diagram specialist: inserts P&ID symbols (valves, pumps, tanks, instruments), draws process lines, and applies tags/line numbers via the pid MCP tool, using the CAD Tools Online (CTO) symbol library.",
+  "responsibilities": [
+    "Insert P&ID symbols from the CTO library (valves, pumps, tanks, instruments)",
+    "Draw process/connection lines and flow arrows",
+    "Apply equipment tags and line numbers per the tagging convention",
+    "Keep the diagram consistent with the process spec"
+  ],
+  "tasks": [
+    "Build the P&ID from the process description",
+    "Tag equipment and number lines",
+    "Verify symbol placement and connectivity via screenshot"
+  ],
+  "inputs": {
+    "task": "Process description / P&ID spec + tagging convention; per task",
+    "library": "CTO symbol library at C:/PIDv4-CTO/; runtime"
+  },
+  "outputs": {
+    "pid": "P&ID with symbols/lines/tags + screenshot; per task"
+  },
+  "dependencies": ["autocad_001","autocad_003","autocad_004"]
+}

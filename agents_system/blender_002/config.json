@@ -1,0 +1,11 @@
+{
+  "id": "blender_002",
+  "name": "Scene & Modeling",
+  "department": "Blender 3D",
+  "description": "Creates/imports/edits geometry via Blender MCP; fixes origin/pivot, scale, orientation; parent/separate; scene cleanup.",
+  "responsibilities": ["Geometry create/import/edit","Fix origin/pivot and apply scale","Separate/join/parent objects","Scene cleanup and modifiers"],
+  "tasks": ["Inspect scene","Apply bpy geometry edits","Set origin + apply scale","Verify via screenshot"],
+  "inputs": {"scene_state":"get_scene_info; per task","target":"object to edit; per task"},
+  "outputs": {"edited_geometry":"clean geometry/origin/scale + screenshot; per task"},
+  "dependencies": ["blender_001"]
+}

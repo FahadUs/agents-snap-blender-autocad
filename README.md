@@ -43,9 +43,17 @@ You ──▶ orch_builder ──┬──▶ snap_001    ──▶ snap_002 …
 └── docs/                     ← human-readable reports (this documentation)
 ```
 
-## License & attribution
+## Author & copyright
 
-Released under the [MIT License](LICENSE) — free to use, modify, and redistribute. When a pipeline fetches third-party assets (Sketchfab / PolyHaven), follow each asset's own license (CC0 / CC-BY attribution).
+**Copyright © 2026 Fahad (FahadUs).** All rights to this work are held by the author.
+
+## License — open source
+
+This project is **open source**, released under the [MIT License](LICENSE): everyone is free to **use, copy, modify, merge, publish, distribute, and sell** it, for any purpose including commercial — the only condition is that the copyright notice above is kept.
+
+> بالعربية: **جميع الحقوق محفوظة لفهد (FahadUs)**، والمشروع **مفتوح المصدر** برخصة MIT — لك كامل الحرية في استعماله وتعديله وإعادة توزيعه (حتى تجاريًا) مع الإبقاء على ذكر صاحب الحقوق.
+
+When a pipeline fetches third-party assets (Sketchfab / PolyHaven), follow each asset's own license (CC0 / CC-BY attribution).
 
 ---
 

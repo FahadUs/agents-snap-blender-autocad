@@ -1,0 +1,120 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <!-- background gradient -->
+    <radialGradient id="bg" cx="32%" cy="28%" r="95%">
+      <stop offset="0%" stop-color="#121a30"/>
+      <stop offset="55%" stop-color="#0a0e1d"/>
+      <stop offset="100%" stop-color="#05060d"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#c8d4ff"/>
+      <stop offset="100%" stop-color="#8b9cff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <!-- node gradients -->
+    <linearGradient id="gSnap" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fff45a"/><stop offset="100%" stop-color="#e3c400"/></linearGradient>
+    <linearGradient id="gBlend" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4aa8ff"/><stop offset="100%" stop-color="#1f6fd6"/></linearGradient>
+    <linearGradient id="gCad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff6a5a"/><stop offset="100%" stop-color="#d6372a"/></linearGradient>
+    <linearGradient id="gOrch" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a06bff"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+    <!-- glow -->
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- subtle grid -->
+  <g stroke="#1b2540" stroke-width="1" opacity="0.5">
+    <path d="M0 80H1280M0 160H1280M0 240H1280M0 320H1280M0 400H1280M0 480H1280M0 560H1280"/>
+    <path d="M80 0V640M160 0V640M240 0V640M320 0V640M400 0V640M480 0V640M560 0V640M640 0V640M720 0V640M800 0V640M880 0V640M960 0V640M1040 0V640M1120 0V640M1200 0V640"/>
+  </g>
+
+  <!-- glow orbs -->
+  <circle cx="120" cy="120" r="180" fill="#7c3aed" opacity="0.16" filter="url(#softglow)"/>
+  <circle cx="1180" cy="540" r="200" fill="#06b6d4" opacity="0.14" filter="url(#softglow)"/>
+
+  <!-- ================= LEFT: text ================= -->
+  <g transform="translate(80,150)">
+    <!-- eyebrow tag -->
+    <g>
+      <rect x="0" y="-2" width="232" height="34" rx="17" fill="none" stroke="url(#accent)" stroke-width="1.4"/>
+      <circle cx="22" cy="15" r="5" fill="#06b6d4" filter="url(#glow)"/>
+      <text x="40" y="20" fill="#9fb0d8" font-size="15" letter-spacing="2" font-weight="600">AI AGENT SYSTEM</text>
+    </g>
+
+    <!-- title -->
+    <text x="0" y="100" fill="url(#title)" font-size="72" font-weight="800" letter-spacing="-1">Agents</text>
+    <text x="0" y="168" fill="#e8ecf6" font-size="46" font-weight="700" letter-spacing="0.5">
+      Snap <tspan fill="#5b6b90" font-weight="400">×</tspan> Blender <tspan fill="#5b6b90" font-weight="400">×</tspan> AutoCAD
+    </text>
+
+    <!-- subtitle -->
+    <text x="2" y="214" fill="#8a96b4" font-size="20" font-family="'Consolas','SF Mono',monospace">
+      39 agent prompts &#183; 3 pipelines &#183; one orchestrator
+    </text>
+
+    <!-- footer tags -->
+    <g transform="translate(0,256)" font-size="14" font-weight="600">
+      <g>
+        <rect x="0" y="0" width="118" height="30" rx="6" fill="#141c33" stroke="#2a3658"/>
+        <text x="59" y="20" fill="#aebbe0" text-anchor="middle">MIT &#183; Open Source</text>
+      </g>
+      <g transform="translate(132,0)">
+        <rect x="0" y="0" width="150" height="30" rx="6" fill="#141c33" stroke="#2a3658"/>
+        <text x="75" y="20" fill="#aebbe0" text-anchor="middle">No keys &#183; No telemetry</text>
+      </g>
+      <g transform="translate(296,0)">
+        <rect x="0" y="0" width="132" height="30" rx="6" fill="#141c33" stroke="#2a3658"/>
+        <text x="66" y="20" fill="#aebbe0" text-anchor="middle">Claude &#183; Cursor &#183; MCP</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= RIGHT: node graph ================= -->
+  <g transform="translate(905,320)">
+    <!-- connectors (orch center -> 3 nodes) -->
+    <g fill="none" stroke-width="2.5" opacity="0.85">
+      <path d="M0 0 C 80 -150, 150 -150, 215 -150" stroke="url(#gSnap)" filter="url(#glow)"/>
+      <path d="M0 0 C 90 0, 150 0, 215 0" stroke="url(#gBlend)" filter="url(#glow)"/>
+      <path d="M0 0 C 80 150, 150 150, 215 150" stroke="url(#gCad)" filter="url(#glow)"/>
+    </g>
+
+    <!-- center: orch_builder -->
+    <circle cx="0" cy="0" r="58" fill="#0c1226" stroke="url(#gOrch)" stroke-width="3" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="58" fill="none" stroke="#a06bff" stroke-width="0.6" opacity="0.5"/>
+    <text x="0" y="-6" text-anchor="middle" fill="#dfe6ff" font-size="15" font-weight="700">orch</text>
+    <text x="0" y="14" text-anchor="middle" fill="#9aa6cc" font-size="13" font-weight="600">builder</text>
+
+    <!-- snap node -->
+    <g transform="translate(275,-150)">
+      <circle r="46" fill="#1a1705" stroke="url(#gSnap)" stroke-width="2.5" filter="url(#glow)"/>
+      <text y="-4" text-anchor="middle" fill="#fff45a" font-size="15" font-weight="700">Snap</text>
+      <text y="15" text-anchor="middle" fill="#c9b94e" font-size="12">20 agents</text>
+    </g>
+    <!-- blender node -->
+    <g transform="translate(275,0)">
+      <circle r="46" fill="#06162b" stroke="url(#gBlend)" stroke-width="2.5" filter="url(#glow)"/>
+      <text y="-4" text-anchor="middle" fill="#69b6ff" font-size="14" font-weight="700">Blender</text>
+      <text y="15" text-anchor="middle" fill="#5b95cf" font-size="12">7 agents</text>
+    </g>
+    <!-- autocad node -->
+    <g transform="translate(275,150)">
+      <circle r="46" fill="#2a0c08" stroke="url(#gCad)" stroke-width="2.5" filter="url(#glow)"/>
+      <text y="-4" text-anchor="middle" fill="#ff8a7c" font-size="13" font-weight="700">AutoCAD</text>
+      <text y="15" text-anchor="middle" fill="#cf6a5e" font-size="12">11 agents</text>
+    </g>
+  </g>
+
+  <!-- bottom hairline -->
+  <rect x="0" y="636" width="1280" height="4" fill="url(#accent)" opacity="0.8"/>
+</svg>

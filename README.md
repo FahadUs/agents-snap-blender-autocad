@@ -1,5 +1,9 @@
 # Agents · Snap × Blender × AutoCAD
 
+<p align="center">
+  <img src="docs/assets/banner.png" alt="Agents · Snap × Blender × AutoCAD — 39 AI agent prompts, 3 pipelines, one orchestrator" width="100%">
+</p>
+
 A standalone collection of **39 AI agent prompts** that turn an LLM coding assistant (Claude Code, Cursor, or any agent runner) into three specialized production pipelines:
 
 | Pipeline | What it builds | Entry agent |

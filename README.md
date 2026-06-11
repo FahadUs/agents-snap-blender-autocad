@@ -45,7 +45,7 @@ You ──▶ orch_builder ──┬──▶ snap_001    ──▶ snap_002 …
 
 ## License & attribution
 
-Prompts and protocols are provided as-is for reuse. When a pipeline fetches third-party assets (Sketchfab / PolyHaven), follow each asset's own license (CC0 / CC-BY attribution).
+Released under the [MIT License](LICENSE) — free to use, modify, and redistribute. When a pipeline fetches third-party assets (Sketchfab / PolyHaven), follow each asset's own license (CC0 / CC-BY attribution).
 
 ---
 
